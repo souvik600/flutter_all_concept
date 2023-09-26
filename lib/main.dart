@@ -1,31 +1,40 @@
-// Basic of a flutter
 import 'package:flutter/material.dart';
 
-void main(){
+///StatelessWidget
+
+void main() {
   runApp(MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Frist App',
-      home: MyHomePage(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("StatelessWidget"),
+        ),
+        body: HomePage(),
+      ),
     );
   }
 }
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('HomePage'),
-      ),
-      body: Center(child: Text('My Frist App')),
+    return Container(
+      color: Colors.blue,
+      child: Center(
+          child: Text(
+        "hello flutter",
+        style: TextStyle(
+            fontSize: 24, color: Colors.white, fontWeight: FontWeight.w500),
+      )),
     );
   }
 }
-
